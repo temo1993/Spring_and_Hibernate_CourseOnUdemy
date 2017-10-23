@@ -1,6 +1,6 @@
 package com.luv2code.springDemo;
 
-public class CricketCoach implements Coach{
+public class CricketCoach implements Coach {
 
     private FortuneService fortuneService;
     private String emailAddress;

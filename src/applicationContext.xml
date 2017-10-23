@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myFortuneService" class="com.luv2code.springDemo.HappyFortuneService"/>
+
+    <bean id="myCoach" class="com.luv2code.springDemo.TrackCoach">
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myBaseballCoach" class="com.luv2code.springDemo.BaseballCoach">
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myCricketCoach" class="com.luv2code.springDemo.CricketCoach">
+        <!-- Set up setter injection -->
+        <property name="fortuneService" ref="myFortuneService"/>
+        <property name="emailAddress" value="thebestcoach@Luv2code.com"/>
+        <property name="team" value="Sunrisers Hyderabad"/>
+    </bean>
+</beans>

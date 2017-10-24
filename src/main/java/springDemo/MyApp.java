@@ -3,7 +3,7 @@ package main.java.springDemo;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyApp {
-    public static void main(String[] args) {
+    public static void main_(String[] args) {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext(
                         "configs/applicationContext.xml");

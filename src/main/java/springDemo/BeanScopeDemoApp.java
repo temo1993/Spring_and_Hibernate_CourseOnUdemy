@@ -1,4 +1,4 @@
-package com.luv2code.springDemo;
+package main.java.springDemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,7 +7,7 @@ public class BeanScopeDemoApp {
 
         // load the spring config file
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
+                new ClassPathXmlApplicationContext("configs/beanScope-applicationContext.xml");
 
         // retrieve bean from spring container
         Coach theCoach = context.getBean("myCoach", Coach.class);

@@ -4,11 +4,9 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="myFortuneService" class="com.luv2code.springDemo.HappyFortuneService"/>
+    <bean id="myFortuneService" class="main.java.springDemo.HappyFortuneService"/>
 
-    <bean id="myCoach" class="com.luv2code.springDemo.TrackCoach"
-          init-method="doMyStartupStuff" destroy-method="doMyCleanupStuffYoYo">
-        <!-- set up constructor injection -->
+    <bean id="myCoach" class="main.java.springDemo.TrackCoach" scope="prototype">
         <constructor-arg ref="myFortuneService"/>
     </bean>
 

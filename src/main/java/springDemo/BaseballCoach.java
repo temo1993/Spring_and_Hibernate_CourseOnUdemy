@@ -1,4 +1,4 @@
-package com.luv2code.springDemo;
+package main.java.springDemo;
 
 class BaseballCoach implements Coach {
     // Define a private field for the dependency

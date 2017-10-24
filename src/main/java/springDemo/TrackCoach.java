@@ -1,4 +1,4 @@
-package com.luv2code.springDemo;
+package main.java.springDemo;
 
 class TrackCoach implements Coach {
     private FortuneService fortuneService;

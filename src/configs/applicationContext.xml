@@ -5,23 +5,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Load the properties file: sport.properties -->
-    <context:property-placeholder location="classpath:sport.properties"/>
+    <context:property-placeholder location="classpath:main/resources/sport.properties"/>
 
-    <bean id="randomFortune" class="com.luv2code.springDemo.RandomFortuneService"/>
+    <bean id="randomFortune" class="main.java.springDemo.RandomFortuneService"/>
 
-    <bean id="myFortuneService" class="com.luv2code.springDemo.HappyFortuneService"/>
+    <bean id="myFortuneService" class="main.java.springDemo.HappyFortuneService"/>
 
-    <bean id="myCoach" class="com.luv2code.springDemo.TrackCoach">
+    <bean id="myCoach" class="main.java.springDemo.TrackCoach">
         <constructor-arg ref="myFortuneService"/>
     </bean>
 
-    <bean id="myBaseballCoach" class="com.luv2code.springDemo.BaseballCoach">
+    <bean id="myBaseballCoach" class="main.java.springDemo.BaseballCoach">
         <constructor-arg ref="randomFortune"/>
     </bean>
 
-    <bean id="myCricketCoach" class="com.luv2code.springDemo.CricketCoach">
+    <bean id="myCricketCoach" class="main.java.springDemo.CricketCoach">
         <!-- Set up setter injection -->
-        <property name="fortuneService" ref="myFortuneService"/>
+        <property name="fortuneService" ref="randomFortune"/>
         <property name="emailAddress" value="${foo.email}"/>
         <property name="team" value="${foo.team}"/>
     </bean>
